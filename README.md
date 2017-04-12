@@ -1,0 +1,1 @@
+# office365-self-registration
