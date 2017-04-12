@@ -14,13 +14,18 @@ public partial class SamplePage : System.Web.UI.Page
 //Domain
 private string baseOU="dc=test,dc=onmicrosoft,dc=com";
 private string baseOU2="ou=test.onmicrosoft.com";
+private string base_email="test.onmicrosoft.com";
+private string company="test.onmicrosoft.com";
+private string usersOU="office365";
+
+
 
 //Login-password for user with Edit rights
 private string devopslogin="devops";
-private string devopspass="1234qwerR!";
+private string devopspass="123123";
 
 //PreSharedKey for md5 HMAC sign of request
-private string secret="P@##w0rD";
+private string secret="P@SSSSS";
 
 
 
@@ -305,7 +310,7 @@ if (user==null)
 //                userD.CommitChanges();
       
 	 userD.Properties["userAccountControl"][0]=0x200;   //enabled
-	 userD.Properties["userPrincipalName"].Value=login+"@office.osu.ru";   //enabled
+	 userD.Properties["userPrincipalName"].Value=login+"@"+base_email;   //enabled
          userD.Properties["GivenName"].Value=name;
          userD.Properties["displayName"].Value=name+' '+fname;
          userD.Properties["SAMAccountName"].Value=login;
@@ -314,7 +319,7 @@ if (user==null)
 	 userD.Properties["mobile"].Value=tel;
 	 userD.Properties["description"].Value=id;
 	 userD.Properties["department"].Value=fac+", "+kaf;
-	 userD.Properties["company"].Value="Orenburg State University";
+	 userD.Properties["company"].Value=company;
 	 userD.Properties["countryCode"].Value="643"; //russia
 //	 userD.Properties["UsageLocation"].Value="RU";
 	 userD.Properties["c"].Value="RU";
