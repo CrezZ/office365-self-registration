@@ -1,1 +1,1 @@
-powershell  -File report.ps1
+powershell  -File script.ps1
